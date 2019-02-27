@@ -9,7 +9,6 @@
 
     .search-input-group {
         position: relative;
-        padding-right: 20px;
         width: 400px;
         color: #ccc;
 
@@ -18,6 +17,7 @@
             border: none;
             border-bottom: 1px solid #ddd;
             color: gray;
+            padding-right: 20px;
 
             &:focus {
                 outline: none;
