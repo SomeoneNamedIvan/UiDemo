@@ -1,0 +1,99 @@
+@import "../../default";
+
+.side-bar {
+    position: absolute;
+    width: 240px;
+    height: 100%;
+    background: $bg_theme;
+    transform: translateX(-180px);
+    transition: transform 0.5s ease;
+    box-shadow: 1px 0px 3px 1px gray;
+    color: white;
+    z-index: 9999;
+
+    .side-header {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .side-menu {
+        > div {
+            position: relative;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                background: #009A8F;
+            }
+        }
+
+        .menu-item-icon {
+            margin-right: 5px;
+            transition: opacity 0.5s ease;
+        }
+
+        .menu-label, menu-item-icon {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .menu-collapse-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            font-size: 1.2em;
+            right: calc(30px - 0.6em);
+        }
+
+        .active {
+            position: relative;
+            background: $bg_theme_highlight;
+
+            &::after {
+                content: ' ';
+                position: absolute;
+                height: 100%;
+                width: 3px;
+                background: white;
+                right: 0;
+                top: 0;
+                opacity: 0;
+                transition-property: opacity;
+                transition-delay: 0.5s;
+                transition-duration: 0.3s;
+            }
+        }
+
+        .side-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        transform: translateX(0px);
+
+        .active {
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        .side-menu {
+            .menu-collapse-icon {
+                opacity: 0;
+            }
+
+            .menu-label, menu-item-icon {
+                opacity: 1;
+            }
+        }
+    }
+
+}

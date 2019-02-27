@@ -1,0 +1,34 @@
+@import "../../default";
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+
+    .search-input-group {
+        position: relative;
+        padding-right: 20px;
+        width: 400px;
+        color: #ccc;
+
+        input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            color: gray;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        i {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 2px;
+        }
+    }
+}

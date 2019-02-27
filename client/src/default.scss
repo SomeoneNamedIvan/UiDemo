@@ -1,0 +1,20 @@
+$bg_theme: #009E8F;
+$bg_theme_highlight: #28B1A1;
+$bg_white: #fbfbfb;
+
+@mixin col($percentage) {
+    flex: 0 0 $percentage;
+    max-width: 0 0 $percentage;
+}
+
+@mixin small-screen() {
+    @media(max-width: 1000px) {
+        @content
+    }
+}
+
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
